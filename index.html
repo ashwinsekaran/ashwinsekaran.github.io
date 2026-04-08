@@ -1,10 +1,187 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Ashwin Sekaran</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        h2 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .links a {
+            margin: 0 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #334155;
+            padding: 5px 10px;
+            border-radius: 6px;
+            margin: 5px 5px 0 0;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #94a3b8;
+        }
+    </style>
 </head>
-<body style="font-family: Arial; text-align:center; margin-top:100px;">
-<h1>Ashwin Sekaran</h1>
-<p>Welcome to my personal website!</p>
+
+<body>
+
+<header>
+    <h1>Ashwin Sekaran</h1>
+    <p>Senior Full-Stack Developer • Cloud Platform Engineer • AI Systems</p>
+
+    <div class="links">
+        <a href="https://github.com/ashwinsekaran">GitHub</a>
+        <a href="https://linkedin.com/in/ashwin-sekaran-13852876/">LinkedIn</a>
+        <a href="mailto:ashwinsekaranbit@gmail.com">Email</a>
+    </div>
+</header>
+
+<section class="section">
+    <h2>About Me</h2>
+    <div class="card">
+        <p>
+            Senior Full-stack Developer and Cloud Platform Engineer with 14+ years of experience
+            building scalable cloud-native platforms and AI-driven systems. Specialized in
+            agentic architectures, real-time data platforms, and distributed systems.
+        </p>
+        <p>
+            Passionate about designing high-performance backend systems, enabling intelligent
+            automation using LLMs, and delivering production-grade infrastructure aligned
+            with business goals.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Key Projects</h2>
+
+    <div class="card">
+        <h3>🤖 AI MCP Conversational Platform</h3>
+        <p>
+            Built an AI-powered conversational platform using ChatGPT and MCP architecture.
+            Designed async services with Python, deployed via Kubernetes on GCP with CI/CD pipelines.
+        </p>
+        <div>
+            <span class="tag">Python</span>
+            <span class="tag">OpenAI</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">GCP</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>⚡ Real-time Ingestion & Agentic AI Platform</h3>
+        <p>
+            Designed a high-throughput telemetry ingestion system using Rust and Cassandra.
+            Integrated multiple LLMs with RAG and MCP for autonomous data querying and analytics.
+        </p>
+        <div>
+            <span class="tag">Rust</span>
+            <span class="tag">Cassandra</span>
+            <span class="tag">RAG</span>
+            <span class="tag">LLMs</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>📊 Smart Metering Data Platform</h3>
+        <p>
+            Built large-scale ingestion and monitoring platform with Go and Kubernetes.
+            Implemented SRE practices, observability (Prometheus, Grafana), and SLA monitoring.
+        </p>
+        <div>
+            <span class="tag">Go</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">Prometheus</span>
+            <span class="tag">Grafana</span>
+        </div>
+    </div>
+
+</section>
+
+<section class="section">
+    <h2>Skills</h2>
+    <div class="card">
+        <p><strong>Languages:</strong> Rust, Go, Python, C#</p>
+        <p><strong>Cloud:</strong> GCP, AWS</p>
+        <p><strong>Tech:</strong> Kubernetes, Docker, Terraform, Cassandra, Postgres</p>
+        <p><strong>AI:</strong> MCP, RAG, OpenAI, Ollama, Agentic Systems</p>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Experience</h2>
+
+    <div class="card">
+        <h3>Cloud Platform Engineer — tc1 GmbH</h3>
+        <p>Berlin, Germany • 2020 – Present</p>
+        <p>
+            Leading development of cloud-native platforms, AI-driven systems, and scalable
+            ingestion architectures across multiple domains including smart metering and
+            financial services.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Associate Manager — Accenture</h3>
+        <p>2015 – 2020</p>
+    </div>
+
+    <div class="card">
+        <h3>Programmer Analyst — Cognizant</h3>
+        <p>2011 – 2015</p>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Ashwin Sekaran
+</footer>
+
 </body>
 </html>

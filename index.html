@@ -5,201 +5,466 @@
     <title>Ashwin Sekaran</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Professional font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
     <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: #ffffff;
-            color: #1f2937;
-            line-height: 1.6;
+        :root {
+            --accent: #1f78c8;
+            --ink: #6b6b6b;
+            --heading: #111111;
+            --muted: #8a8a8a;
         }
 
-        header {
-            text-align: center;
-            padding: 60px 20px 30px;
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #ffffff;
+            color: var(--ink);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 17px;
+            line-height: 1.18;
+        }
+
+        .page {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 74px 0 64px;
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: minmax(0, 2.15fr) minmax(260px, 0.85fr);
+            gap: 62px;
+            align-items: start;
+            margin-bottom: 38px;
         }
 
         h1 {
-            font-size: 2.5rem;
+            margin: 0 0 24px;
+            color: var(--heading);
+            font-size: 48px;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        .summary {
+            max-width: 760px;
             margin: 0;
-            font-weight: 600;
+            font-size: 18px;
+            font-weight: 400;
+            text-align: left;
+        }
+
+        .portrait {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            justify-self: start;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: minmax(0, 2.15fr) minmax(260px, 0.85fr);
+            gap: 62px;
+            align-items: start;
+        }
+
+        section {
+            margin: 0 0 34px;
         }
 
         h2 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: #111827;
+            margin: 0 0 22px;
+            color: var(--accent);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.15;
+            font-weight: 700;
+        }
+
+        h3 {
+            margin: 0 0 12px;
+            color: var(--muted);
+            font-size: 21px;
+            line-height: 1.12;
+            font-weight: 700;
         }
 
         p {
-            color: #4b5563;
+            margin: 0 0 16px;
+            text-align: left;
+            font-weight: 400;
         }
 
-        .section {
-            max-width: 900px;
-            margin: auto;
-            padding: 30px 20px;
+        .role {
+            margin-bottom: 28px;
         }
 
-        .card {
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 18px;
-            margin-top: 16px;
-            background: #ffffff;
+        .role-title {
+            color: var(--muted);
+        }
+
+        .project-name {
+            color: var(--ink);
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        .tech {
+            margin-top: 4px;
+            color: var(--ink);
+            font-style: italic;
+            font-weight: 700;
+        }
+
+        .sidebar section {
+            margin-bottom: 34px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 18px;
+        }
+
+        .skill-block {
+            margin-bottom: 24px;
+        }
+
+        .skill-block p,
+        .contact-links p {
+            margin-bottom: 0;
+            text-align: left;
+            line-height: 1.22;
+        }
+
+        .skill-name {
+            color: var(--ink);
+            font-size: 1.12em;
+            font-weight: 700;
+        }
+
+        .contact-links {
+            margin-top: 74px;
+        }
+
+        .secondary-sidebar {
+            margin-top: 46px;
         }
 
         a {
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .links {
-            margin-top: 10px;
-        }
-
-        .links a {
-            margin: 0 8px;
-            font-size: 0.95rem;
-        }
-
-        .tag {
-            display: inline-block;
-            border: 1px solid #e5e7eb;
-            padding: 4px 8px;
-            border-radius: 6px;
-            margin: 5px 5px 0 0;
-            font-size: 0.75rem;
-            color: #374151;
+            color: #0f65c2;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 2px;
         }
 
         footer {
-            text-align: center;
-            padding: 30px;
-            color: #9ca3af;
-            font-size: 0.85rem;
+            margin-top: 48px;
+            color: #9a9a9a;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 860px) {
+            body {
+                font-size: 16px;
+            }
+
+            .page {
+                width: min(100% - 28px, 680px);
+                padding-top: 42px;
+            }
+
+            .intro,
+            .content {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .intro {
+                margin-bottom: 34px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .portrait {
+                width: 190px;
+                height: 190px;
+            }
+
+            .contact-links {
+                margin-top: 22px;
+            }
         }
     </style>
 </head>
 
 <body>
+<main class="page">
+    <header class="intro">
+        <div>
+            <h1>Ashwin Sekaran</h1>
+            <p class="summary">
+                Senior backend and Cloud Platform Engineer with 14 years of experience
+                in platform automation and AI-driven systems, specializing in agentic architectures.
+                Experienced in building cloud-native platforms for smart metering, cloud
+                automation, and financial services. Experience in leading cross-functional teams and
+                delivering production-grade systems aligned with business goals.
+            </p>
+        </div>
+        <img class="portrait" src="https://github.com/ashwinsekaran.png" alt="Ashwin Sekaran">
+    </header>
 
-<header>
-    <h1>Ashwin Sekaran</h1>
-    <p>Senior backend Engineer • Cloud Platform Engineer • AI Systems</p>
+    <div class="content">
+        <div class="main-column">
+            <section>
+                <h2>Recent Experience</h2>
 
-    <div class="links">
-        <a href="https://github.com/ashwinsekaran">GitHub</a>
-        <a href="https://linkedin.com/in/ashwin-sekaran-13852876/">LinkedIn</a>
-        <a href="mailto:ashwinsekaranbit@gmail.com">Email</a>
+                <article class="role">
+                    <h3>tc1 GmbH, Berlin, Germany <span class="role-title">Software Engineer</span> - 2020 - Present</h3>
+                </article>
+
+                <article class="role">
+                    <p>
+                        <span class="project-name">Open AI MCP App</span> - Designed and built an AI-powered conversational platform using
+                        ChatGPT as a connector, implemented with MCP and Python. Architected
+                        high-performance asynchronous services using FastMCP and Uvicorn, with Firestore as
+                        the primary datastore. Led end-to-end platform deployment by containerizing services
+                        and shipping them via a GHCR-backed CI/CD pipeline to a GKE cluster. Authored Helm
+                        charts to manage Kubernetes resources, including deployments, services, and
+                        autoscaling. Implemented Kubernetes Ingress and DNS configuration to expose the MCP
+                        server securely, ensuring scalable, reliable, and production-ready infrastructure.
+                    </p>
+                    <p class="tech">Python, Firestore, MCP, OpenAI, Kubernetes, Docker, GCP, Terraform</p>
+                </article>
+
+                <article class="role">
+                    <p>
+                        <span class="project-name">Ingestion Control Platform</span> - Designed and built a scalable data ingestion and
+                        monitoring platform for device-space management, streaming real-time telemetry over
+                        MQTT and processing it with Rust and Axum. Developed an AI-powered, agentic
+                        conversational interface by integrating multiple LLMs (OpenAI, Grok, and Ollama),
+                        leveraging context engineering to dynamically generate high-quality prompts from both
+                        streaming and historical data. Architected and implemented an MCP (Model Context
+                        Protocol) server-host architecture to securely expose domain-specific tools and datasets,
+                        enabling autonomous, tool-invoking LLM agents for advanced querying and analytical
+                        workflows. Deployed cloud-native, high-throughput services using Cassandra, Docker,
+                        and Kubernetes, optimized for time-series ingestion and event-driven processing at
+                        scale.
+                    </p>
+                    <p class="tech">Rust, Axum, Context Engineering, RAG, OpenAI API, MCP server/host, Cassandra, Docker, Kubernetes</p>
+                </article>
+
+                <article class="role">
+                    <p>
+                        <span class="project-name">Data Ingestion and Service Management Platform</span> - For a Smart Metering firm, led
+                        the design and operation of a large-scale Data Ingestion and Service Management
+                        Platform for a smart metering provider using Go and Cassandra. The platform ingests
+                        high-volume metering data from multiple customer Elasticsearch clusters into a
+                        unified distributed processing layer, enabling real-time operational visibility.
+                        Integrated our own custom OAuth 2.0 system with customer Azure AD to enforce
+                        secure, fine-grained access control across platform services. Owned production
+                        reliability and SRE practices by deploying containerized services via a GHCR-backed
+                        CI/CD pipeline to Azure Kubernetes Service (AKS). Defined and enforced SLIs and
+                        SLAs based on customer-provided KPIs, implementing automated anomaly detection
+                        and SLA breach monitoring across ingestion throughput, latency, and availability.
+                        Built end-to-end observability using OpenTelemetry, Prometheus, and Grafana,
+                        including Kubernetes and Cassandra health, capacity, and performance dashboards.
+                        Integrated incident.io to automatically trigger incidents, alerts, and stakeholder
+                        notifications on SLA violations, establishing measurable reliability targets, rapid
+                        incident response, and continuous service improvement.
+                    </p>
+                    <p class="tech">GoLang, Cassandra, Kubernetes, Grafana, Prometheus, Docker, Latex, Azure</p>
+                </article>
+
+                <article class="role">
+                    <p>
+                        <span class="project-name">Authentication and Authorization Service</span> - Drove the end-to-end development of an
+                        OAuth 2.0-compliant authorization platform for service accounts using Rust, Warp, and
+                        Hyper, inspired by the Google Zanzibar access-control model. Implemented multi-IdP
+                        authentication and federation supporting Google, Microsoft, X, OpenLDAP, and other
+                        identity providers for a centralized access-control application. Architected the platform
+                        with a pluggable, feature-gated Rust design, enabling seamless switching of databases
+                        and identity integrations based on customer requirements.
+                    </p>
+                    <p class="tech">Rust, Warp, Hyper, OAuth 2.0, Google Zanzibar, Cassandra, Kubernetes, GCP</p>
+                </article>
+
+                <article class="role">
+                    <p>
+                        <span class="project-name">AWS Marketplace Integration</span> - For an open-source vector database, integrated a
+                        Marketplace application into AWS using CloudFormation templates.
+                    </p>
+                    <p class="tech">AWS, CloudFormation, Marketplace API</p>
+                </article>
+
+                <article class="role">
+                    <p>
+                        <span class="project-name">Access Manager</span> - For a European retail ecommerce giant, built a Go application
+                        featuring an Access Manager with a Postgres backend, monitoring tools, Grafana, and
+                        Prometheus dashboards. Automated cloud platform tasks using Go and Google Cloud API,
+                        leveraging Terraform Google provider functionality.
+                    </p>
+                    <p class="tech">Go, Postgres, Grafana, Prometheus, Google Cloud, Terraform</p>
+                </article>
+            </section>
+
+            <section>
+                <h2>Open Source Contributions</h2>
+
+                <article class="role">
+                    <p>
+                        <span class="project-name">F1predictor</span> - Enhanced an open-source Formula 1 telemetry library and AI-based
+                        race outcome predictor for the 2026 season. Leveraged an existing Gradient Boosting
+                        Regressor model to visualize, analyze, and strategize key telemetry data using the
+                        FastF1 API and Matplotlib.
+                    </p>
+                    <p class="tech">Python, FastF1, scikit-learn, Matplotlib</p>
+                </article>
+
+                <article class="role">
+                    <p>
+                        <span class="project-name">Httprouterext</span> - Enhanced a Go client library for a custom Authorization Service,
+                        a high-performance, relationship-based authorization system. The library provides a
+                        gRPC client to interact with the service and middleware for easy integration with the
+                        julienschmidt/httprouter framework.
+                    </p>
+                    <p class="tech">Go, gRPC, httprouter, Authorization</p>
+                </article>
+
+                <article class="role">
+                    <p>
+                        <span class="project-name">Internal Consistent Hashing Library</span> - Built an internal consistent hashing
+                        library with Tonic for a gRPC client in Rust, supporting reliable request distribution
+                        across backend services.
+                    </p>
+                    <p class="tech">Rust, Tonic, gRPC, Consistent Hashing</p>
+                </article>
+            </section>
+
+            <section>
+                <article class="role">
+                    <h3>Accenture, Chennai, India <span class="role-title">(Associate Manager)</span> 2015 - 2020</h3>
+                    <p>
+                        <span class="project-name">Solution Planner</span> - Technical Lead/Manager for the SI module of a Solution Planner
+                        application targeting Solution Architects in Accenture, estimating costing and pricing
+                        for bids including AO and SI (Application Outsourcing and System Integration). Led design
+                        and performance engineering action items, including UI and database design, SQL profiling
+                        and indexing, LINQ optimization, and Entity Framework implementation. Owned project
+                        artifacts and unit testing for applications using Jasmine and Karma.
+                    </p>
+                    <p class="tech">.NET Core, Angular, MVC, SQL, LINQ, AG-Grid, Entity Framework</p>
+                </article>
+
+                <article class="role">
+                    <h3>Cognizant, Chennai, India <span class="role-title">(Programmer Analyst)</span> 2011 - 2015</h3>
+                    <p>
+                        Developed and maintained commercial financing applications for a US-based bank, delivering
+                        enhancements based on client requirements and supporting production application workflows.
+                    </p>
+                    <p class="tech">ADO.Net, Telerik, SQL, TFS</p>
+                </article>
+            </section>
+        </div>
+
+        <aside class="sidebar">
+            <section>
+                <h2>Programming Languages</h2>
+                <div class="skill-block">
+                    <p><span class="skill-name">Rust</span> (Tokio, Warp, Axum)</p>
+                </div>
+                <div class="skill-block">
+                    <p><span class="skill-name">Go</span> (Web applications, daemons, Google Cloud automation)</p>
+                </div>
+                <div class="skill-block">
+                    <p><span class="skill-name">Python</span> (fastmcp, uvicorn, matplotlib, scikit-learn)</p>
+                </div>
+                <div class="skill-block">
+                    <p><span class="skill-name">.Net/C#</span> (MVC, .Net Core, Web API, Desktop apps, LINQ, Entity Framework, Telerik UI)</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>AI</h2>
+                <div class="skill-block">
+                    <p><span class="skill-name">MCP</span> (server and Host)</p>
+                </div>
+                <div class="skill-block">
+                    <p><span class="skill-name">Context Engineering</span> (RAG)</p>
+                </div>
+                <div class="skill-block">
+                    <p><span class="skill-name">Integration</span> (OpenAI, Ollama, Gemini)</p>
+                </div>
+                <div class="skill-block">
+                    <p><span class="skill-name">Agentic AI</span></p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Technologies</h2>
+                <div class="skill-block">
+                    <p><span class="skill-name">Kubernetes, Docker</span></p>
+                </div>
+                <div class="skill-block">
+                    <p><span class="skill-name">Database</span> (MS SQL, Postgres, MongoDB, Cassandra)</p>
+                </div>
+                <div class="skill-block">
+                    <p><span class="skill-name">SRE/Operations</span> (Prometheus, Grafana)</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Clouds</h2>
+                <div class="skill-block">
+                    <p><span class="skill-name">Google</span> (GCR, GCS, Cloud Run, Datastore, Cloud SQL, Workload Identity Federation, OAuth 2 Credentials, Pub/Sub)</p>
+                </div>
+                <div class="skill-block">
+                    <p><span class="skill-name">AWS</span> (CloudFormation, Marketplace API)</p>
+                </div>
+                <div class="skill-block">
+                    <p><span class="skill-name">Azure</span> (AKS, Azure AD)</p>
+                </div>
+            </section>
+
+            <section class="contact-links">
+                <p><a href="https://linkedin.com/in/ashwin-sekaran-13852876/">Linked In</a></p>
+                <p><a href="https://github.com/ashwinsekaran">GitHub/Open Source Libs</a></p>
+                <p><a href="mailto:ashwinsekaranbit@gmail.com">Email</a></p>
+            </section>
+
+            <section class="secondary-sidebar">
+                <h2>Medium.com Articles Published</h2>
+                <div class="skill-block">
+                    <p><a href="https://medium.com/@ashwinsekaranbit">Connect Cassandra in RUST</a></p>
+                </div>
+                <div class="skill-block">
+                    <p><a href="https://medium.com/@ashwinsekaranbit">OpenAI ChatGPT APP Guide</a></p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Email</h2>
+                <div class="skill-block">
+                    <p><a href="mailto:ashwinsekaranbit@gmail.com">ashwinsekaranbit@gmail.com</a></p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Contact</h2>
+                <div class="skill-block">
+                    <p><span class="skill-name">+49 17660354532</span></p>
+                </div>
+                <div class="skill-block">
+                    <p><span class="skill-name">+91 9786115086</span></p>
+                </div>
+            </section>
+        </aside>
     </div>
-</header>
 
-<section class="section">
-    <h2>About</h2>
-    <div class="card">
-        <p>
-            Senior Full-stack Developer and Cloud Platform Engineer with 14 years of experience
-            in platform automation and AI-driven systems, specializing in agentic architectures.
-            Experienced in building cloud-native platforms for smart metering, cloud
-            automation, and financial services. Experience in leading cross functional teams and
-            delivering production-grade systems aligned with business goals.
-        </p>
-    </div>
-</section>
-
-<section class="section">
-    <h2>Selected Work</h2>
-
-    <div class="card">
-        <h3>Open AI MCP App</h3>
-        <p>
-            Designed and built an AI-powered conversational platform using
-            ChatGPT as a connector, implemented with MCP and Python. Architected
-            high-performance asynchronous services using FastMCP and Uvicorn, with Firestore as
-            the primary datastore. Led end-to-end platform deployment by containerizing services
-            and shipping them via a GHCR-backed CI/CD pipeline to a GKE cluster. Authored Helm
-            charts to manage Kubernetes resources, including deployments, services, and
-            autoscaling. Implemented Kubernetes Ingress and DNS configuration to expose the MCP
-            server securely, ensuring scalable, reliable, and production-ready infrastructure.
-        </p>
-        <span class="tag">Python</span>
-        <span class="tag">OpenAI</span>
-        <span class="tag">Kubernetes</span>
-        <span class="tag">GCP</span>
-    </div>
-
-    <div class="card">
-        <h3>Real-time Ingestion & Agentic AI Platform</h3>
-        <p>
-            Designed and built a scalable data ingestion and
-            monitoring platform for device-space management, streaming real-time telemetry over
-            MQTT and processing it with Rust and Axum. Developed an AI-powered, agentic
-            conversational interface by integrating multiple LLMs ( OpenAI, Grok, and Ollama),
-            leveraging context engineering to dynamically generate high-quality prompts from both
-            streaming and historical data. Architected and implemented an MCP (Model Context
-            Protocol) server –host architecture to securely expose domain-specific tools and datasets,
-            enabling autonomous, tool-invoking LLM agents for advanced querying and analytical
-            workflows. Deployed cloud-native, high-throughput services using Cassandra, Docker,
-            and Kubernetes, optimized for time-series ingestion and event -driven processing at
-            scale.
-        </p>
-        <span class="tag">Rust</span>
-        <span class="tag">Cassandra</span>
-        <span class="tag">RAG</span>
-    </div>
-
-    <div class="card">
-        <h3>Smart Metering Platform</h3>
-        <p>
-            Developed scalable ingestion and monitoring platform with Go, Kubernetes,
-            Prometheus, and Grafana with strong SRE practices.
-        </p>
-        <span class="tag">Go</span>
-        <span class="tag">Kubernetes</span>
-        <span class="tag">Prometheus</span>
-    </div>
-
-</section>
-
-<section class="section">
-    <h2>Skills</h2>
-    <div class="card">
-        <p><strong>Languages:</strong> Rust, Go, Python, C#</p>
-        <p><strong>Cloud:</strong> GCP, AWS</p>
-        <p><strong>Technologies:</strong> Kubernetes, Docker, Terraform, Cassandra</p>
-        <p><strong>AI:</strong> MCP, RAG, OpenAI, Agentic Systems</p>
-    </div>
-</section>
-
-<section class="section">
-    <h2>Experience</h2>
-
-    <div class="card">
-        <h3>tc1 GmbH — Cloud Platform Engineer</h3>
-        <p>2020 – Present</p>
-    </div>
-
-    <div class="card">
-        <h3>Accenture — Associate Manager</h3>
-        <p>2015 – 2020</p>
-    </div>
-
-    <div class="card">
-        <h3>Cognizant — Programmer Analyst</h3>
-        <p>2011 – 2015</p>
-    </div>
-
-</section>
-
-<footer>
-    © 2026 Ashwin Sekaran
-</footer>
-
+    <footer>&copy; 2026 Ashwin Sekaran</footer>
+</main>
 </body>
 </html>

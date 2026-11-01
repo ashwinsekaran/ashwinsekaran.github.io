@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photography · Ashwin Sekaran</title>
+<meta name="description" content="Wildlife from India and travels across Europe, photographed by Ashwin Sekaran.">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-7a57ed6b-709d-45be-ae26-48002f34af2b/styles.css">
+<script src="_ds/modernist-7a57ed6b-709d-45be-ae26-48002f34af2b/_ds_bundle.js"></script>
+<style>
+html,body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);text-wrap:pretty}
+body{overflow-x:clip}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--color-accent)}
+</style>
+</helmet>
+
+<div data-progress="" style="position:fixed;top:0;left:0;height:3px;width:0;background:var(--color-accent);z-index:50"></div>
+<a href="index.html" style="position:fixed;left:clamp(20px,4vw,56px);bottom:24px;z-index:50;color:#fff;mix-blend-mode:difference;font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;display:flex;gap:12px;align-items:center">
+  <span style="width:10px;height:10px;background:currentColor"></span><span>← Home</span>
+</a>
+
+<section style="padding:clamp(72px,14vh,160px) clamp(20px,4vw,56px) clamp(48px,8vh,96px);display:flex;flex-direction:column;gap:clamp(28px,5vh,56px)">
+  <span data-rise="" style="font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-700)">02 Photography</span>
+  <h1 style="margin:0 0 0 -0.06em;font-size:clamp(64px,14vw,260px);line-height:0.86;letter-spacing:-0.05em">
+    <span style="display:block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.13em"><span data-introline="" style="display:block">Through</span></span>
+    <span style="display:block;overflow:hidden;padding-bottom:0.18em;margin-bottom:-0.13em"><span data-introline="" style="display:block">the lens<span style="color:var(--color-accent)">.</span></span></span>
+  </h1>
+  <div data-rise="" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;border-top:2px solid var(--color-divider);padding-top:24px">
+    <p style="margin:0;font-size:clamp(18px,1.6vw,24px);line-height:1.45;max-width:46ch">Wildlife from India, and trips across Europe from a base in Berlin. Mostly shot on a DSLR, Pixel Pro and iPhone Pro.</p>
+    <span style="font-weight:800;font-size:clamp(40px,5vw,80px);line-height:1;letter-spacing:-0.04em;font-feature-settings:'tnum' 1">{{ total }}<span style="font-size:14px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin-left:10px">photos</span></span>
+  </div>
+</section>
+
+<section data-clipsec="" style="height:140vh;position:relative">
+  <div style="position:sticky;top:0;height:100vh;overflow:hidden">
+    <div data-clip="" style="position:absolute;inset:0;overflow:hidden;clip-path:inset(10% 16%)">
+      <img data-zoom="" src="assets/photos/n07.jpg" alt="Northern lights" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.2)">
+    </div>
+    <div style="position:absolute;left:clamp(20px,4vw,56px);right:clamp(20px,4vw,56px);bottom:clamp(56px,10vh,96px);display:flex;justify-content:space-between;align-items:flex-end;gap:24px;color:#fff;mix-blend-mode:difference">
+      <span style="font-weight:800;font-size:clamp(36px,5vw,88px);line-height:0.95;letter-spacing:-0.04em">Northern lights</span>
+      <span style="font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase">Featured</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding:clamp(64px,10vh,120px) clamp(20px,4vw,56px) clamp(96px,14vh,160px);display:flex;flex-direction:column;gap:32px">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;border-bottom:2px solid var(--color-divider);padding-bottom:20px;position:sticky;top:0;z-index:10;background:var(--color-bg);padding-top:16px">
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <sc-for list="{{ cats }}" as="c" hint-placeholder-count="6">
+        <button type="button" onClick="{{ c.pick }}" class="btn {{ c.cls }}">{{ c.label }} <span style="opacity:.7;font-weight:400">{{ c.n }}</span></button>
+      </sc-for>
+    </div>
+    <span style="font-size:13px;color:var(--color-neutral-700)">Click any photo to open it</span>
+  </div>
+  <div style="columns:3 300px;column-gap:12px">
+    <sc-for list="{{ shown }}" as="ph" hint-placeholder-count="9">
+      <figure data-reveal="" onClick="{{ ph.open }}" style="margin:0 0 12px;break-inside:avoid;cursor:zoom-in;display:flex;flex-direction:column;gap:8px">
+        <div style="overflow:hidden">
+          <img src="{{ ph.src }}" alt="{{ ph.cap }}" loading="lazy" style="display:block;width:100%;height:auto;filter:{{ ph.f }};transition:filter .5s ease, transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="filter:none;transform:scale(1.04)">
+        </div>
+        <figcaption style="display:flex;justify-content:space-between;gap:12px;font-size:13px"><span><strong style="color:var(--color-accent-700);margin-right:8px">{{ ph.num }}</strong>{{ ph.cap }}</span><span style="color:var(--color-neutral-700)">{{ ph.cat }}</span></figcaption>
+      </figure>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:var(--color-accent);color:var(--color-bg);padding:clamp(72px,12vh,140px) clamp(20px,4vw,56px)">
+  <a href="index.html" style="display:flex;flex-direction:column;gap:16px" style-hover="color:var(--color-text)">
+    <span style="font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase">Back to</span>
+    <span style="font-weight:800;font-size:clamp(56px,10vw,180px);line-height:0.88;letter-spacing:-0.05em">Home →</span>
+  </a>
+</section>
+
+<sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:200;background:var(--color-text);color:var(--color-bg);display:grid;grid-template-rows:auto minmax(0,1fr) auto">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:16px clamp(20px,4vw,56px)">
+      <span style="font-weight:800;font-size:14px;white-space:nowrap;font-feature-settings:'tnum' 1"><span style="color:var(--color-accent-400)">{{ lbNum }}</span> / {{ lbTotal }}</span>
+      <button type="button" onClick="{{ close }}" class="btn btn-ghost" style="color:var(--color-bg);border-color:var(--color-bg)">Close ✕</button>
+    </div>
+    <div onClick="{{ close }}" style="display:flex;align-items:center;justify-content:center;padding:0 clamp(20px,4vw,56px);min-height:0">
+      <div role="img" aria-label="{{ lbCap }}" style="width:100%;height:100%;background-image:{{ lbBg }};background-size:contain;background-repeat:no-repeat;background-position:center"></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px clamp(20px,4vw,56px) 24px">
+      <button type="button" onClick="{{ prev }}" class="btn btn-ghost" style="color:var(--color-bg);border-color:var(--color-bg)">← Prev</button>
+      <span style="font-weight:800;font-size:clamp(18px,2vw,28px);letter-spacing:-0.01em">{{ lbCap }}</span>
+      <button type="button" onClick="{{ next }}" class="btn btn-ghost" style="color:var(--color-bg);border-color:var(--color-bg)">Next →</button>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;photoMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Black &amp; white&quot;,&quot;Colour on hover&quot;,&quot;Full colour&quot;],&quot;default&quot;:&quot;Full colour&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Photos&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  state = { cat: 'All', lb: -1 };
+  photos = [
+    ['n26','Fernsehturm at sunset','Berlin'],['p16','Elephant herd at the water','Wildlife'],['n09','Colosseum, Rome','Travel'],['p07','Rose-ringed parakeet','Wildlife'],
+    ['n08','Snow on the mountains','Nature'],['n14','Brandenburg Gate','Berlin'],['n22','Astronomical clock, Prague','Travel'],['p14','Bald eagle','Wildlife'],
+    ['n11','Waterfall pool','Nature'],['n29','Buda Castle at night','Travel'],['n18','Among the tulips','People'],['p02','Elephant calf','Wildlife'],
+    ['n05','Ferris wheel at sunset','Travel'],['n02','Autumn avenue in fog','Nature'],['n12','Schloss Bellevue','Berlin'],['p13','Lion-tailed macaque','Wildlife'],
+    ['n20','Mountain waterfall','Nature'],['n24','Red rooftops','Travel'],['n10','At the falls','People'],['p06','Black labrador','Wildlife'],
+    ['n25','Jellyfish','Wildlife'],['n19','Cabin by the water','Nature'],['n04','Swing ride at night','Travel'],['p11','Coastal temple at dusk','Travel'],
+    ['n30','Flag in the snow','People'],['n06','Orange sky over the city','Travel'],['p04','Dome ceiling','Travel'],['n16','Paraglider over the lake','Nature'],
+    ['n27','Tiled roof','Travel'],['p05','Sunset over the sea','Nature'],['n00','Lakeside trees','Nature'],['n32','Inside the Colosseum','Travel'],
+    ['p17','Clock and shadow','Travel'],['n21','Green valley','Nature'],['n23','Illusion room','People'],['p09','Full moon','Nature'],
+    ['n03','Autumn leaves on asphalt','Nature'],['n13','Schloss Bellevue lawn','Berlin'],['p19','Chimpanzee, asleep','Wildlife'],['n17','Wooden clogs','Travel'],
+    ['n15','Balcony','Travel'],['p03','Canal house','Travel'],['n28','Reflection in glass','Travel'],['p01','Katydid','Wildlife'],
+    ['n31','Carrying skis','People'],['p10','White flowers against the sky','Nature'],['n01','City square','Travel'],['p15','Babbler on a branch','Wildlife'],
+    ['p18','Arches at night','Travel'],['p00','Road through the fields','Nature'],['p08','Two pigeons','Wildlife'],['p12','Camera and mountains','Nature'],['n07','Northern lights','Nature']
+  ].map(([f, cap, cat]) => ({ src: 'assets/photos/' + f + '.jpg', cap, cat }));
+  extra = [
+    ['m14','Parliament at night, Budapest','Travel'],['m17','Chapel Bridge, Lucerne','Travel'],['m10','Snowy summit','Nature'],['m02','Little explorer','People'],
+    ['m09','St. Peter\'s Square panorama','Travel'],['m04','Aurora over the street','Nature'],['m06','Swiss chalet','Travel'],['m07','Peaks in the clouds','Nature'],
+    ['m12','Old town crowds','Travel'],['m11','Alpine valley','Nature'],['m00','Bust by the window','Travel'],['m18','Cable car over the snow','Nature'],
+    ['m03','Husband daycare','Travel'],['m15','Village under the cliffs','Nature'],['m01','Terracotta face','Travel'],['m16','Meadow and chalets','Nature'],
+    ['m19','St. Peter\'s Square, Rome','Travel'],['m05','Lake through bare branches','Nature'],['m13','Walkers on the road','People'],['m08','Train to Visp','Travel']
+  ];
+  cats = ['All', 'Travel', 'Berlin', 'Nature', 'Wildlife', 'People'];
+
+  constructor(props) {
+    super(props);
+    const ex = this.extra.map(([f, cap, cat]) => ({ src: 'assets/photos/' + f + '.jpg', cap, cat }));
+    const merged = [];
+    const base = this.photos;
+    let j = 0;
+    base.forEach((ph, i) => { merged.push(ph); if (i % 3 === 0 && j < ex.length) merged.push(ex[j++]); });
+    while (j < ex.length) merged.push(ex[j++]);
+    this.photos = merged;
+  }
+  list() { return this.state.cat === 'All' ? this.photos : this.photos.filter(p => p.cat === this.state.cat); }
+  step(d) { const n = this.list().length; this.setState(s => ({ lb: (s.lb + d + n) % n })); }
+
+  componentDidMount() {
+    const ease = 'cubic-bezier(.2,.7,.2,1)';
+    const motion = (this.props.motion ?? true) && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.motion = motion;
+    const lines = Array.from(document.querySelectorAll('[data-introline]')), rise = Array.from(document.querySelectorAll('[data-rise]'));
+    if (motion) {
+      lines.forEach(l => { l.style.transform = 'translateY(105%)'; });
+      rise.forEach(r => { r.style.opacity = 0; r.style.transform = 'translateY(24px)'; });
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        lines.forEach((l, i) => { l.style.transition = `transform 1.2s ${ease} ${i * 130}ms`; l.style.transform = 'none'; });
+        rise.forEach((r, i) => { r.style.transition = `opacity 1s ${ease} ${400 + i * 150}ms, transform 1s ${ease} ${400 + i * 150}ms`; r.style.opacity = 1; r.style.transform = 'none'; });
+      }));
+      this.io = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target, d = (+el.dataset.col || 0) * 90;
+        el.style.transition = `opacity .9s ${ease} ${d}ms, transform 1s ${ease} ${d}ms`;
+        el.style.opacity = 1; el.style.transform = 'none';
+        this.io.unobserve(el);
+      }), { threshold: 0.08 });
+    }
+    this.watch();
+    this.onKey = e => {
+      if (this.state.lb < 0) return;
+      if (e.key === 'Escape') this.setState({ lb: -1 });
+      if (e.key === 'ArrowRight') this.step(1);
+      if (e.key === 'ArrowLeft') this.step(-1);
+    };
+    addEventListener('keydown', this.onKey);
+    const clamp = v => Math.max(0, Math.min(1, v));
+    const bar = document.querySelector('[data-progress]'), sec = document.querySelector('[data-clipsec]'), clip = document.querySelector('[data-clip]'), zoom = document.querySelector('[data-zoom]');
+    const loop = () => {
+      const b = document.body;
+      const sc = b.scrollHeight > b.clientHeight + 1 && getComputedStyle(b).overflowY !== 'visible' ? b : document.scrollingElement;
+      const max = sc.scrollHeight - sc.clientHeight;
+      bar.style.width = (max > 0 ? sc.scrollTop / max * 100 : 0) + '%';
+      if (motion && sec) {
+        const r = sec.getBoundingClientRect(), p = clamp((innerHeight - r.top) / (innerHeight * 1.1));
+        clip.style.clipPath = `inset(${(1 - p) * 10}% ${(1 - p) * 16}%)`;
+        zoom.style.transform = `scale(${1.2 - 0.2 * p})`;
+      } else if (clip) { clip.style.clipPath = 'none'; }
+      this.raf = requestAnimationFrame(loop);
+    };
+    this.raf = requestAnimationFrame(loop);
+  }
+  watch() {
+    if (!this.io) return;
+    Array.from(document.querySelectorAll('[data-reveal]')).forEach((el, i) => {
+      if (el.dataset.seen) return;
+      el.dataset.seen = '1'; el.dataset.col = i % 3;
+      el.style.opacity = 0; el.style.transform = 'translateY(48px)';
+      this.io.observe(el);
+    });
+  }
+  componentDidUpdate(pp, ps) {
+    if (ps.cat !== this.state.cat) {
+      Array.from(document.querySelectorAll('[data-reveal]')).forEach(el => { delete el.dataset.seen; });
+    }
+    this.watch();
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); removeEventListener('keydown', this.onKey); if (this.io) this.io.disconnect(); }
+
+  renderVals() {
+    const mode = this.props.photoMode ?? 'Full colour';
+    const f = mode === 'Full colour' ? 'none' : 'grayscale(1) contrast(1.08)';
+    const list = this.list(), lb = this.state.lb, cur = list[lb];
+    return {
+      total: this.photos.length,
+      cats: this.cats.map(c => ({
+        label: c, n: c === 'All' ? this.photos.length : this.photos.filter(p => p.cat === c).length,
+        cls: c === this.state.cat ? 'btn-primary' : 'btn-secondary',
+        pick: () => this.setState({ cat: c, lb: -1 })
+      })),
+      shown: list.map((p, i) => ({ ...p, f, num: String(i + 1).padStart(2, '0'), open: () => this.setState({ lb: i }) })),
+      lbOpen: !!cur, lbBg: cur ? `url("${cur.src}")` : 'none', lbCap: cur ? cur.cap : '',
+      lbNum: String(lb + 1).padStart(2, '0'), lbTotal: String(list.length).padStart(2, '0'),
+      close: () => this.setState({ lb: -1 }), prev: e => { e.stopPropagation(); this.step(-1); }, next: e => { e.stopPropagation(); this.step(1); }
+    };
+  }
+}
+</script>
+</body>
+</html>
